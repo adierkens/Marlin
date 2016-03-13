@@ -493,7 +493,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
   // X and Y offsets must be integers.
   #define X_PROBE_OFFSET_FROM_EXTRUDER -10     // Z probe to nozzle X offset: -left  +right
   #define Y_PROBE_OFFSET_FROM_EXTRUDER -10      // Z probe to nozzle Y offset: -front +behind
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER -12    // Z probe to nozzle Z offset: -below (always!)
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER -10.5    // Z probe to nozzle Z offset: -below (always!)
 
   #define Z_RAISE_BEFORE_HOMING 15       // (in mm) Raise Z axis before homing (G28) for Z probe clearance.
                                         // Be sure you have this distance over your Z_MAX_POS in case.
@@ -587,7 +587,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,387,90}  // default steps per unit for Ultimaker
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,387,671}  // default steps per unit for Ultimaker
 #define DEFAULT_MAX_FEEDRATE          {250, 250, 2, 50}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {1000,1000,5,1000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
@@ -811,7 +811,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 //#define X_ENDSTOP_SERVO_NR 1
 //#define Y_ENDSTOP_SERVO_NR 2
 #define Z_ENDSTOP_SERVO_NR 0
-#define SERVO_ENDSTOP_ANGLES {{0,0}, {0,0}, {180,0}} // X,Y,Z Axis Extend and Retract angles
+#define SERVO_ENDSTOP_ANGLES {{0,0}, {0,0}, {90,0}} // X,Y,Z Axis Extend and Retract angles
 
 // Servo deactivation
 //
@@ -822,7 +822,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
   // Delay (in microseconds) before turning the servo off. This depends on the servo speed.
   // 300ms is a good value but you can try less delay.
   // If the servo can't reach the requested position, increase it.
-  #define SERVO_DEACTIVATION_DELAY 500
+  #define SERVO_DEACTIVATION_DELAY 1000
 #endif
 
 /**********************************************************************\
